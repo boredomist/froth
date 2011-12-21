@@ -13,7 +13,7 @@
   (add-word "swap"  #(let [a (pop-stack) b (pop-stack)] (push-stack a) (push-stack b)))
   (add-word ">"     #(push-stack (< (pop-stack) (pop-stack))))
   (add-word "<"     #(push-stack (> (pop-stack) (pop-stack))))
-  (add-word "="     #(push-stack (= (pop-stack) (pop-stack))))  
+  (add-word "="     #(push-stack (= (pop-stack) (pop-stack))))
   (add-word "."     #(println (pop-stack)))
   (add-word ".S"    #(clojure.pprint/pprint @stack))
   (add-word "0SP"   #(clear-stack))
@@ -34,7 +34,7 @@
   (add-word "?"     #(push-stack (boolean (pop-stack))))
   (add-word "and"   #(push-stack (boolean (and (pop-stack) (pop-stack)))))
   (add-word "or"    #(push-stack (boolean (or (pop-stack) (pop-stack)))))
-    
+
   (alias-word "print" ".")
   (alias-word "print-stack" ".S")
   (alias-word "clear" "0SP")

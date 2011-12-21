@@ -38,7 +38,7 @@
 (defn read-definition []
   "Reads the definition of a function (upto and not including the ';')"
   (read-definition- []))
-    
+
 
 (defn read-str [delim]
   "Returns a string, delimited by delim"
@@ -49,9 +49,9 @@
     (let [string (read-word)]
       (when-not string
 	(throw (Exception. "Unterminated string!")))
-      
+
       ; skip over trailing 'delim'
       (.skip @froth-reader (Pattern/quote delim))
-      
+
       (.useDelimiter @froth-reader original-delim)
       string)))

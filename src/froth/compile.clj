@@ -26,4 +26,3 @@
 	  (push-stack word)))
       (when (not= word :EOF)
 	(recur)))))
-  

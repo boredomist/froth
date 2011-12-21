@@ -11,20 +11,20 @@
   "The froth REPL"
   (println "froth version" *froth-version*)
   (println "Copyright (c) 2010, Erik Price")
-  
+
   (print prompt)
   (flush)
-  
+
   (swap! froth-reader (constantly (Scanner. (read-line))))
-  
+
   (while true
     (try
       (evaluate)
       (catch Exception e (println (.getMessage e))))
-    
+
     (print prompt)
     (flush)
-    
+
     (swap! froth-reader (constantly (Scanner. (read-line))))))
 
 (defn read-file [args]
